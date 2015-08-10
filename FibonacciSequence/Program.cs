@@ -12,6 +12,9 @@ namespace FibonacciSequence
     {
         static void Main(string[] args)
         {
+            //setting size of console window to accommodate size of numbers in Fibonacci sequence
+            Console.SetWindowSize(130, 20);
+
             //initializing list of Fibonacci Sequence Numbers
             List<int> terms = new List<int>();
 
@@ -41,10 +44,10 @@ namespace FibonacciSequence
             }
 
             //printing the list of FSNs
-            Console.WriteLine("Here are the numbers of the Fibonacci sequence with values of 4,000,000 or less: ");
+            Console.WriteLine("Here are the numbers of the Fibonacci sequence with values of 4,000,000 or less:\n");
             for (int i = 0; i < terms.Count; i++)
             {
-                Console.Write("\t" + terms[i]);
+                Console.Write("\t{0,10:N0}", terms[i]);
             }
  
             //finding and printing the sum of only the even-valued terms in the above-generated list
@@ -56,8 +59,7 @@ namespace FibonacciSequence
                     evenValuedSum = evenValuedSum + terms[j];
                 }
             }
-            Console.WriteLine("\n");
-            Console.WriteLine("The sum of the even-valued above-listed terms is: " + evenValuedSum);
+            Console.WriteLine("\nThe sum of the even-valued above-listed terms is: {0,9:N0}", evenValuedSum);
 
             Console.Read();
 
